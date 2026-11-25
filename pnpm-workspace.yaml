@@ -1,0 +1,10 @@
+packages:
+  - apps/*
+  - packages/*
+  - services/*
+
+allowBuilds:
+  esbuild: true
+  sharp: true
+  unrs-resolver: true
+  msgpackr-extract: true
