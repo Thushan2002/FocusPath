@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+/* FocusPath design tokens — from the design canvas (source of truth). */
+@theme {
+  --color-primary: #0d6e5f;
+  --color-primary-hover: #09584c;
+  --color-primary-ink: #0b5e51; /* primary text on light backgrounds (AA) */
+  --color-primary-soft: #e3f1ee;
+  --color-primary-tint: #f0f7f5;
+  --color-panel: #0f3d36; /* dark panel */
+  --color-panel-2: #174b43;
+  --color-panel-3: #24564e;
+  --color-panel-text: #cfe5e0;
+  --color-panel-muted: #a9d3cb;
+  --color-accent: #f5c08a; /* amber accent on dark panels */
+  --color-warning: #c2620e;
+  --color-warning-ink: #8a4309;
+  --color-warning-deep: #5c2d06;
+  --color-warning-soft: #fbefe2;
+  --color-knowledge: #24489a;
+  --color-knowledge-soft: #e6eefb;
+  --color-ink: #14171f;
+  --color-ink-2: #3d4350;
+  --color-muted: #5a6170;
+  --color-subtle: #8a909c;
+  --color-bg: #f5f6f8;
+  --color-surface: #ffffff;
+  --color-line: #e3e6eb;
+  --color-line-soft: #eef0f4;
+  --color-field: #c9ced6;
+  --color-chip: #f0f2f5;
+  --color-code-bg: #111a19;
+  --color-code-bar: #182624;
+  --color-code-line: #24302e;
+  --color-code-text: #e6eeec;
+  --color-code-muted: #a9c2bd;
+  --color-code-error: #f2b8a0;
+
+  --font-sans: var(--font-jakarta), "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-xl: 14px;
+  --radius-2xl: 16px;
+  --radius-3xl: 20px;
+
+  --spacing-touch: 44px;
+}
+
+@layer base {
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+  }
+  :where(button, a, input, select, textarea, [tabindex]):focus-visible {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+@utility eyebrow {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
